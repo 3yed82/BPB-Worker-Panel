@@ -2220,7 +2220,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
             <hr>
             <div class="footer">
                 <i class="fa fa-github" style="font-size:36px; margin-right: 10px;"></i>
-                <a class="link" href="https://github.com/bia-pain-bache/3YED-Worker-Panel" target="_blank">Github</a>
+                <a class="link" href="https://github.com/3yed-61/BPB-Worker-Panel" target="_blank">Github</a>
                 <button id="openModalBtn" class="button">Change Password</button>
                 <button type="button" id="logout" style="background: none; margin: 0; border: none; cursor: pointer;">
                     <i class="fa fa-power-off fa-2x" aria-hidden="true"></i>
@@ -3551,12 +3551,12 @@ async function getFragmentConfigs(env, hostName) {
                 let remark;
 
                 if (vlessConfigs && i === 0) {
-                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, 'VLESS', 'F');
+                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, '3λΞĐ ⱽᴸ', 'F');
                     outbound = buildXrayVLESSOutbound('proxy', addr, port, userID, hostName, proxyIP);
                 }
                 
                 if (trojanConfigs && !outbound) {
-                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, 'Trojan', 'F', addr);
+                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, ' 3λΞĐ ᵀᴿ', 'F', addr);
                     outbound = buildXrayTrojanOutbound('proxy', addr, port, trojanPassword, hostName, proxyIP);
                 }
                 
@@ -4012,7 +4012,7 @@ async function getClashConfig (env, hostName, isWarp) {
                 const host = isCustomAddr ? customCdnHost : hostName;
 
                 if (vlessConfigs && i === 0) {
-                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, 'VLESS', configType).replace(' : ', ' - ');
+                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, '3λΞĐ ⱽᴸ', configType).replace(' : ', ' - ');
                     path = `/${getRandomPath(16)}${proxyIP ? `/${btoa(proxyIP)}` : ''}`;
                     addr = isIPv6(addr) ? addr.replace(/\[|\]/g, '') : addr;
                     VLESSOutbound = buildClashVLESSOutbound(
@@ -4029,7 +4029,7 @@ async function getClashConfig (env, hostName, isWarp) {
                 }
                 
                 if (trojanConfigs && !VLESSOutbound && defaultHttpsPorts.includes(port)) {
-                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, 'Trojan', configType).replace(' : ', ' - ');
+                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, ' 3λΞĐ ᵀᴿ', configType).replace(' : ', ' - ');
                     path = `/tr${getRandomPath(16)}${proxyIP ? `/${btoa(proxyIP)}` : ''}`;
                     addr = isIPv6(addr) ? addr.replace(/\[|\]/g, '') : addr;
                     TrojanOutbound = buildClashTrojanOutbound(
@@ -4577,7 +4577,7 @@ async function getSingboxConfig (env, hostName, client, isWarp, isFragment) {
                 const host = isCustomAddr ? customCdnHost : hostName;
          
                 if (vlessConfigs && i === 0) {
-                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, 'VLESS', configType);
+                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, '3λΞĐ ⱽᴸ', configType);
                     path = `/${getRandomPath(16)}${proxyIP ? `/${btoa(proxyIP)}` : ''}`;
                     VLESSOutbound = buildSingboxVLESSOutbound(
                         chainProxyOutbound ? `proxy-${proxyIndex}` : remark, 
@@ -4597,7 +4597,7 @@ async function getSingboxConfig (env, hostName, client, isWarp, isFragment) {
                 }
                 
                 if (trojanConfigs && !VLESSOutbound) {
-                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, 'Trojan', configType);
+                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, ' 3λΞĐ ᵀᴿ', configType);
                     path = `/tr${getRandomPath(16)}${proxyIP ? `/${btoa(proxyIP)}` : ''}`;
                     TrojanOutbound = buildSingboxTrojanOutbound(
                         chainProxyOutbound ? `proxy-${proxyIndex}` : remark, 
@@ -4671,8 +4671,8 @@ async function getNormalConfigs(env, hostName, client) {
             const host = isCustomAddr ? customCdnHost : hostName;
             const path = `${getRandomPath(16)}${proxyIP ? `/${encodeURIComponent(btoa(proxyIP))}` : ''}${earlyData}`;
             const configIndex = isCustomAddr ? index - Addresses.length + 1 : index;
-            const vlessRemark = encodeURIComponent(generateRemark(proxyIndex, port, addr, cleanIPs, 'VLESS', configType));
-            const trojanRemark = encodeURIComponent(generateRemark(proxyIndex + totalAddresses.length * ports.length, port, addr, cleanIPs, 'Trojan', configType));
+            const vlessRemark = encodeURIComponent(generateRemark(proxyIndex, port, addr, cleanIPs, '3λΞĐ ⱽᴸ', configType));
+            const trojanRemark = encodeURIComponent(generateRemark(proxyIndex + totalAddresses.length * ports.length, port, addr, cleanIPs, ' 3λΞĐ ᵀᴿ', configType));
             const tlsFields = defaultHttpsPorts.includes(port) 
                 ? `&security=tls&sni=${sni}&fp=randomized&alpn=${alpn}`
                 : '&security=none';
