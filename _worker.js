@@ -1,7 +1,7 @@
 // @ts-nocheck
 // <!--GAMFC-->version base on commit 43fad05dcdae3b723c53c226f8181fc5bd47223e, time is 2023-06-22 15:20:02 UTC<!--GAMFC-END-->.
 // @ts-ignore
-// https://github.com/3yed-61/BPB-Worker-Panel
+// https://github.com/3yed82/BPB-Worker-Panel
 
 import { connect } from 'cloudflare:sockets';
 
@@ -1131,7 +1131,7 @@ function generateRemark(index, port, address, cleanIPs, protocol, configType) {
         ? addressType = 'Clean IP'
         : addressType = isDomain(address) ? 'Domain': isIPv4(address) ? 'IPv4' : isIPv6(address) ? 'IPv6' : '';
 
-    return `♨️ ${index} - ${protocol}${type} - ${addressType} : ${port}`;
+    return `🌀 ${index} - ${protocol}${type} - ${addressType} : ${port}`;
 }
 
 function isDomain(address) {
@@ -1444,7 +1444,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>3λΞĐ Panel ${panelVersion}</title>
+        <title>𝓝𝔧ϯ٥ Panel ${panelVersion}</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 		<style>
@@ -1661,7 +1661,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
 	</head>
 	
 	<body>
-		<h1>3λΞĐ Panel <span style="font-size: smaller;">${panelVersion}</span> ♨️</h1>
+		<h1>𝓝𝔧ϯ٥ Panel <span style="font-size: smaller;">${panelVersion}</span> 🌀</h1>
 		<div class="form-container">
             <form id="configForm">
                 <h2>VLESS/TROJAN SETTINGS ⚙️</h2>
@@ -2220,7 +2220,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
             <hr>
             <div class="footer">
                 <i class="fa fa-github" style="font-size:36px; margin-right: 10px;"></i>
-                <a class="link" href="https://github.com/bia-pain-bache/3YED-Worker-Panel" target="_blank">Github</a>
+                <a class="link" href="https://github.com/3yed82/BPB-Worker-Panel" target="_blank">Github</a>
                 <button id="openModalBtn" class="button">Change Password</button>
                 <button type="button" id="logout" style="background: none; margin: 0; border: none; cursor: pointer;">
                     <i class="fa fa-power-off fa-2x" aria-hidden="true"></i>
@@ -2738,7 +2738,7 @@ async function renderLoginPage () {
     </head>
     <body>
         <div class="container">
-            <h1>3λΞĐ Panel <span style="font-size: smaller;">${panelVersion}</span> ♨️</h1>
+            <h1>𝓝𝔧ϯ٥ Panel <span style="font-size: smaller;">${panelVersion}</span> 🌀</h1>
             <div class="form-container">
                 <h2>User Login</h2>
                 <form id="loginForm">
@@ -2809,10 +2809,10 @@ function renderErrorPage (message, error, refer) {
 
     <body>
         <div id="error-container">
-            <h1>3λΞĐ Panel <span style="font-size: smaller;">${panelVersion}</span> ♨️</h1>
+            <h1>𝓝𝔧ϯ٥ Panel <span style="font-size: smaller;">${panelVersion}</span> 🌀</h1>
             <div id="error-message">
                 <h2>${message} ${refer 
-                    ? 'Please try again or refer to <a href="https://github.com/3yed-61/BPB-Worker-Panel/blob/main/README.md">documents</a>' 
+                    ? 'Please try again or refer to <a href="https://github.com/3yed82/BPB-Worker-Panel/blob/main/README.md">documents</a>' 
                     : ''}
                 </h2>
                 <p><b>${error ? `⚠️ ${error}` : ''}</b></p>
@@ -2929,7 +2929,7 @@ async function buildWarpOutbounds (env, client, proxySettings, warpConfigs) {
 
         if (client === 'singbox' || client === 'hiddify') {
             let singboxOutbound = buildSingboxWarpOutbound(
-                client === 'hiddify' ? `♨️ Warp Pro ${index + 1} 🇮🇷` : `♨️ Warp ${index + 1} 🇮🇷`, 
+                client === 'hiddify' ? `🌀 Warp Pro ${index + 1} 🇮🇷` : `🌀 Warp ${index + 1} 🇮🇷`, 
                 warpIPv6, 
                 privateKey, 
                 publicKey, 
@@ -2949,7 +2949,7 @@ async function buildWarpOutbounds (env, client, proxySettings, warpConfigs) {
         }
 
         if (client === 'clash') {
-            let clashOutbound = buildClashWarpOutbound(`♨️ Warp ${index + 1} 🇮🇷`, warpIPv6, privateKey, publicKey, endpoint, reserved, '');
+            let clashOutbound = buildClashWarpOutbound(`🌀 Warp ${index + 1} 🇮🇷`, warpIPv6, privateKey, publicKey, endpoint, reserved, '');
             warpOutbounds.push(clashOutbound);
         }
 
@@ -3008,8 +3008,8 @@ async function buildWoWOutbounds (env, client, proxySettings, warpConfigs) {
                     i === 1
                     ? `warp-ir_${index + 1}` 
                     : client === 'hiddify' 
-                        ? `♨️ WoW Pro ${index + 1} 🌍` 
-                        : `♨️ WoW ${index + 1} 🌍` , 
+                        ? `🌀 WoW Pro ${index + 1} 🌍` 
+                        : `🌀 WoW ${index + 1} 🌍` , 
                     warpIPv6, 
                     privateKey, 
                     publicKey, 
@@ -3030,7 +3030,7 @@ async function buildWoWOutbounds (env, client, proxySettings, warpConfigs) {
 
             if (client === 'clash') {
                 let clashOutbound = buildClashWarpOutbound(
-                    i === 1 ? `warp-ir_${index + 1}` : `♨️ WoW ${index + 1} 🌍`, 
+                    i === 1 ? `warp-ir_${index + 1}` : `🌀 WoW ${index + 1} 🌍`, 
                     warpIPv6, 
                     privateKey, 
                     publicKey, 
@@ -3452,7 +3452,7 @@ async function buildWorkerLessConfig(remoteDNS, localDNS, lengthMin,  lengthMax,
     delete fakeOutbound.streamSettings.sockopt;
     fakeOutbound.streamSettings.wsSettings.path = '/';
     let fragConfig = structuredClone(xrayConfigTemp);
-    fragConfig.remarks  = '♨️ 3λΞĐ F - WorkerLess ⭐'
+    fragConfig.remarks  = '🌀 3λΞĐ F - WorkerLess ⭐'
     fragConfig.dns = await buildXrayDNSObject('https://cloudflare-dns.com/dns-query', localDNS, blockAds, bypassIran, bypassChina, bypassLAN, blockPorn, true);
     fragConfig.outbounds[0].settings.domainStrategy = 'UseIP';
     fragConfig.outbounds[0].settings.fragment.length = `${lengthMin}-${lengthMax}`;
@@ -3551,12 +3551,12 @@ async function getFragmentConfigs(env, hostName) {
                 let remark;
 
                 if (vlessConfigs && i === 0) {
-                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, 'VLESS', 'F');
+                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, '3λΞĐ ⱽᴸ', 'F');
                     outbound = buildXrayVLESSOutbound('proxy', addr, port, userID, hostName, proxyIP);
                 }
                 
                 if (trojanConfigs && !outbound) {
-                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, 'Trojan', 'F', addr);
+                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, ' 3λΞĐ ᵀᴿ', 'F', addr);
                     outbound = buildXrayTrojanOutbound('proxy', addr, port, trojanPassword, hostName, proxyIP);
                 }
                 
@@ -3588,7 +3588,7 @@ async function getFragmentConfigs(env, hostName) {
     }
     
     let bestPing = structuredClone(balancerConfig);
-    bestPing.remarks = '♨️ 3λΞĐ F - Best Ping 💥';
+    bestPing.remarks = '🌀 3λΞĐ F - Best Ping 💥';
     bestPing.outbounds = [...outbounds, ...bestPing.outbounds];
     
     if (chainProxy) {
@@ -3598,7 +3598,7 @@ async function getFragmentConfigs(env, hostName) {
     }
 
     let bestFragment = structuredClone(balancerConfig);
-    bestFragment.remarks = '♨️ 3λΞĐ F - Best Fragment 😎';
+    bestFragment.remarks = '🌀 3λΞĐ F - Best Fragment 😎';
     bestFragment.outbounds.splice(0,1);
     bestFragValues.forEach( (fragLength, index) => {
         bestFragment.outbounds.push({
@@ -3667,7 +3667,7 @@ async function getXrayWarpConfigs (env, client) {
     xrayWarpConfig.routing.rules[xrayWarpConfig.routing.rules.length - 1].outboundTag = 'warp';
     delete xrayWarpConfig.observatory;
     delete xrayWarpConfig.routing.balancers;
-    xrayWarpBestPing.remarks = client === 'nikang' ? '♨️ 3λΞĐ - Warp Pro Best Ping 🚀' : '♨️ 3λΞĐ - Warp Best Ping 🚀';
+    xrayWarpBestPing.remarks = client === 'nikang' ? '🌀 3λΞĐ - Warp Pro Best Ping 🚀' : '🌀 3λΞĐ - Warp Best Ping 🚀';
     xrayWarpBestPing.dns = await buildXrayDNSObject('1.1.1.1', localDNS, blockAds, bypassIran, bypassChina, bypassLAN, blockPorn, false);
     xrayWarpBestPing.routing.rules = buildXrayRoutingRules(localDNS, blockAds, bypassIran, blockPorn, bypassLAN, bypassChina, blockUDP443, false, true, false, true);
     xrayWarpBestPing.outbounds.splice(0,1);
@@ -3682,7 +3682,7 @@ async function getXrayWarpConfigs (env, client) {
     xrayWarpOutbounds.forEach((outbound, index) => {
         xrayWarpConfigs.push({
             ...xrayWarpConfig,
-            remarks: client === 'nikang' ? `♨️ 3λΞĐ - Warp Pro ${index + 1} 🇮🇷` : `♨️ 3λΞĐ - Warp ${index + 1} 🇮🇷`,
+            remarks: client === 'nikang' ? `🌀 3λΞĐ - Warp Pro ${index + 1} 🇮🇷` : `🌀 3λΞĐ - Warp ${index + 1} 🇮🇷`,
             outbounds: [{...outbound, tag: 'warp'}, ...xrayWarpConfig.outbounds]
         });
     });
@@ -3690,7 +3690,7 @@ async function getXrayWarpConfigs (env, client) {
     xrayWoWOutbounds.forEach((outbound, index) => {
         if (outbound.tag.includes('warp-out')) {
             let xrayWoWConfig = structuredClone(xrayWoWConfigTemp);
-            xrayWoWConfig.remarks = client === 'nikang' ? `♨️ 3λΞĐ - WoW Pro ${index/2 + 1} 🌍` : `♨️ 3λΞĐ - WoW ${index/2 + 1} 🌍`;
+            xrayWoWConfig.remarks = client === 'nikang' ? `🌀 3λΞĐ - WoW Pro ${index/2 + 1} 🌍` : `🌀 3λΞĐ - WoW ${index/2 + 1} 🌍`;
             xrayWoWConfig.outbounds = [{...xrayWoWOutbounds[index]}, {...xrayWoWOutbounds[index + 1]}, ...xrayWoWConfig.outbounds];
             xrayWoWConfig.routing.rules[xrayWoWConfig.routing.rules.length - 1].outboundTag = outbound.tag;
             xrayWarpConfigs.push(xrayWoWConfig);
@@ -3698,7 +3698,7 @@ async function getXrayWarpConfigs (env, client) {
     });
 
     let xrayWoWBestPing = structuredClone(xrayWarpBestPing);
-    xrayWoWBestPing.remarks = client === 'nikang' ? '♨️ 3λΞĐ - WoW Pro Best Ping 🚀' : '♨️ 3λΞĐ - WoW Best Ping 🚀';
+    xrayWoWBestPing.remarks = client === 'nikang' ? '🌀 3λΞĐ - WoW Pro Best Ping 🚀' : '🌀 3λΞĐ - WoW Best Ping 🚀';
     xrayWoWBestPing.routing.balancers[0].selector = ['warp-out'];
     xrayWoWBestPing.observatory.subjectSelector = ['warp-out'];
     xrayWarpBestPing.outbounds = [...xrayWarpOutbounds, ...xrayWarpBestPing.outbounds];
@@ -3860,7 +3860,7 @@ function buildClashChainOutbound(chainProxyParams) {
 
     const { hostName, port, uuid, flow, security, type, sni, fp, alpn, pbk, sid, spx, headerType, host, path, authority, serviceName, mode } = chainProxyParams;
     let chainOutbound = {
-        "name": "♨️ Chain Best Ping 💥",
+        "name": "🌀 Chain Best Ping 💥",
         "type": "vless",
         "server": hostName,
         "port": +port,
@@ -3868,7 +3868,7 @@ function buildClashChainOutbound(chainProxyParams) {
         "uuid": uuid,
         "flow": flow,
         "network": type,
-        "dialer-proxy": "♨️ Best Ping 💥"
+        "dialer-proxy": "🌀 Best Ping 💥"
     };
 
     if (security === 'tls') {
@@ -4012,7 +4012,7 @@ async function getClashConfig (env, hostName, isWarp) {
                 const host = isCustomAddr ? customCdnHost : hostName;
 
                 if (vlessConfigs && i === 0) {
-                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, 'VLESS', configType).replace(' : ', ' - ');
+                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, '3λΞĐ ⱽᴸ', configType).replace(' : ', ' - ');
                     path = `/${getRandomPath(16)}${proxyIP ? `/${btoa(proxyIP)}` : ''}`;
                     addr = isIPv6(addr) ? addr.replace(/\[|\]/g, '') : addr;
                     VLESSOutbound = buildClashVLESSOutbound(
@@ -4029,7 +4029,7 @@ async function getClashConfig (env, hostName, isWarp) {
                 }
                 
                 if (trojanConfigs && !VLESSOutbound && defaultHttpsPorts.includes(port)) {
-                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, 'Trojan', configType).replace(' : ', ' - ');
+                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, ' 3λΞĐ ᵀᴿ', configType).replace(' : ', ' - ');
                     path = `/tr${getRandomPath(16)}${proxyIP ? `/${btoa(proxyIP)}` : ''}`;
                     addr = isIPv6(addr) ? addr.replace(/\[|\]/g, '') : addr;
                     TrojanOutbound = buildClashTrojanOutbound(
@@ -4060,14 +4060,14 @@ async function getClashConfig (env, hostName, isWarp) {
 
     config.proxies = outbounds;
     config['proxy-groups'][0].proxies = isWarp
-        ? ['♨️ Warp Best Ping 🚀', '♨️ WoW Best Ping 🚀', ...warpOutboundsRemarks, ...wowOutboundRemarks ]
-        : ['♨️ Best Ping 💥', ...outboundsRemarks ];
+        ? ['🌀 Warp Best Ping 🚀', '🌀 WoW Best Ping 🚀', ...warpOutboundsRemarks, ...wowOutboundRemarks ]
+        : ['🌀 Best Ping 💥', ...outboundsRemarks ];
 
     config['proxy-groups'][1].proxies = isWarp ? warpOutboundsRemarks : outboundsRemarks;
-    config['proxy-groups'][1].name = isWarp ? `♨️ Warp Best Ping 🚀`: `♨️ Best Ping 💥`,
+    config['proxy-groups'][1].name = isWarp ? `🌀 Warp Best Ping 🚀`: `🌀 Best Ping 💥`,
 
     isWarp && config["proxy-groups"].push({
-        "name": "♨️ WoW Best Ping 🚀",
+        "name": "🌀 WoW Best Ping 🚀",
         "type": "url-test",
         "url": "https://www.gstatic.com/generate_204",
         "interval": 30,
@@ -4538,15 +4538,15 @@ async function getSingboxConfig (env, hostName, client, isWarp, isFragment) {
         const WOWOutbounds = await buildWoWOutbounds(env, client, proxySettings, warpConfigs);
         config.dns.servers[0].address = '1.1.1.1';
         config.outbounds[0].outbounds = client === 'hiddify'
-            ? ["♨️ Warp Pro Best Ping 🚀", "♨️ WoW Pro Best Ping 🚀"]
-            : ["♨️ Warp Best Ping 🚀", "♨️ WoW Best Ping 🚀"];
+            ? ["🌀 Warp Pro Best Ping 🚀", "🌀 WoW Pro Best Ping 🚀"]
+            : ["🌀 Warp Best Ping 🚀", "🌀 WoW Best Ping 🚀"];
         config.outbounds.splice(2, 0, structuredClone(config.outbounds[1]));
         config.outbounds[1].tag = client === 'hiddify' 
-            ? "♨️ Warp Pro Best Ping 🚀"
-            : "♨️ Warp Best Ping 🚀";
+            ? "🌀 Warp Pro Best Ping 🚀"
+            : "🌀 Warp Best Ping 🚀";
         config.outbounds[2].tag = client === 'hiddify'
-            ? "♨️ WoW Pro Best Ping 🚀"
-            : "♨️ WoW Best Ping 🚀";
+            ? "🌀 WoW Pro Best Ping 🚀"
+            : "🌀 WoW Best Ping 🚀";
         config.outbounds.push(...warpOutbounds, ...WOWOutbounds);
         warpOutbounds.forEach(outbound => {
             config.outbounds[0].outbounds.push(outbound.tag);
@@ -4577,7 +4577,7 @@ async function getSingboxConfig (env, hostName, client, isWarp, isFragment) {
                 const host = isCustomAddr ? customCdnHost : hostName;
          
                 if (vlessConfigs && i === 0) {
-                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, 'VLESS', configType);
+                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, '3λΞĐ ⱽᴸ', configType);
                     path = `/${getRandomPath(16)}${proxyIP ? `/${btoa(proxyIP)}` : ''}`;
                     VLESSOutbound = buildSingboxVLESSOutbound(
                         chainProxyOutbound ? `proxy-${proxyIndex}` : remark, 
@@ -4597,7 +4597,7 @@ async function getSingboxConfig (env, hostName, client, isWarp, isFragment) {
                 }
                 
                 if (trojanConfigs && !VLESSOutbound) {
-                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, 'Trojan', configType);
+                    remark = generateRemark(proxyIndex, port, addr, cleanIPs, ' 3λΞĐ ᵀᴿ', configType);
                     path = `/tr${getRandomPath(16)}${proxyIP ? `/${btoa(proxyIP)}` : ''}`;
                     TrojanOutbound = buildSingboxTrojanOutbound(
                         chainProxyOutbound ? `proxy-${proxyIndex}` : remark, 
@@ -4671,8 +4671,8 @@ async function getNormalConfigs(env, hostName, client) {
             const host = isCustomAddr ? customCdnHost : hostName;
             const path = `${getRandomPath(16)}${proxyIP ? `/${encodeURIComponent(btoa(proxyIP))}` : ''}${earlyData}`;
             const configIndex = isCustomAddr ? index - Addresses.length + 1 : index;
-            const vlessRemark = encodeURIComponent(generateRemark(proxyIndex, port, addr, cleanIPs, 'VLESS', configType));
-            const trojanRemark = encodeURIComponent(generateRemark(proxyIndex + totalAddresses.length * ports.length, port, addr, cleanIPs, 'Trojan', configType));
+            const vlessRemark = encodeURIComponent(generateRemark(proxyIndex, port, addr, cleanIPs, '3λΞĐ ⱽᴸ', configType));
+            const trojanRemark = encodeURIComponent(generateRemark(proxyIndex + totalAddresses.length * ports.length, port, addr, cleanIPs, ' 3λΞĐ ᵀᴿ', configType));
             const tlsFields = defaultHttpsPorts.includes(port) 
                 ? `&security=tls&sni=${sni}&fp=randomized&alpn=${alpn}`
                 : '&security=none';
@@ -4690,7 +4690,7 @@ async function getNormalConfigs(env, hostName, client) {
     });
 
     if (outProxy) {
-        let chainRemark = `#${encodeURIComponent('♨️ Chain proxy 🔗')}`;
+        let chainRemark = `#${encodeURIComponent('🌀 Chain proxy 🔗')}`;
         if (outProxy.startsWith('socks') || outProxy.startsWith('http')) {
             const regex = /^(?:socks|http):\/\/([^@]+)@/;
             const userPass = outProxy.match(regex)[1];
@@ -4840,7 +4840,7 @@ const singboxConfigTemp = {
                 address: "",
                 address_resolver: "dns-direct",
                 strategy: "prefer_ipv4",
-                detour: "♨️ Best Ping 💥",
+                detour: "🌀 Best Ping 💥",
                 tag: "dns-remote"
             },
             {
@@ -4891,11 +4891,11 @@ const singboxConfigTemp = {
         {
             type: "selector",
             tag: "proxy",
-            outbounds: ["♨️ Best Ping 💥"]
+            outbounds: ["🌀 Best Ping 💥"]
         },
         {
             type: "urltest",
-            tag: "♨️ Best Ping 💥",
+            tag: "🌀 Best Ping 💥",
             outbounds: [],
             url: "https://www.gstatic.com/generate_204",
             interval: "30s",
